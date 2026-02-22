@@ -6,23 +6,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Locale.setDefault(Locale.US);
         sc.useLocale(Locale.US);
 
-       int X = sc.nextInt();
-
-       for(int i=1;i<=X;i++){
-          if(i % 2 != 0){
-              System.out.println(i);
-          }
-       }
-
-
-
-
-
-
-
-
+        long maior = 0;
+        int linha = 0;
+        for (int i = 0; i<100; i++){
+            long N = sc.nextLong();
+            if (N > maior) {
+                maior = N;
+                linha = i + 1;
+            }
+        }
+           System.out.println(maior);
+           System.out.println(linha);
            sc.close();
         }
     }
