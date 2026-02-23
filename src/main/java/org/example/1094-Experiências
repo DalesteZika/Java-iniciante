@@ -1,0 +1,49 @@
+package org.example;
+
+import java.util.Scanner;
+
+public class 1094{
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int total = 0;
+        int Quantia = 0;
+        int totalC = 0;
+        int totalR = 0;
+        int totalS = 0;
+        double pC = 0;
+        double pR = 0;
+        double pS = 0;
+        for (int i = 0; i<N; i++) {
+            Quantia = sc.nextInt();
+            char cobaia = sc.next().charAt(0);
+            total += Quantia;
+            if (cobaia == 'C') {
+                totalC += Quantia;
+            }else if(cobaia == 'R'){
+                totalR += Quantia;
+            }else if (cobaia == 'S'){
+                totalS += Quantia;
+            }
+        }
+        pC = (double)(totalC * 100.0) / total;
+        pR = (double)(totalR * 100.0) / total;
+        pS = (double)(totalS * 100.0) / total;
+
+
+
+            System.out.println("Total: "+ total +" cobaias");
+            System.out.println("Total de coelhos: "+ totalC);
+            System.out.println("Total de ratos: "+ totalR);
+            System.out.println("Total de sapos: "+ totalS);
+            System.out.printf("Percentual de coelhos: %.2f %%%n", pC);
+            System.out.printf("Percentual de ratos: %.2f %%%n", pR);
+            System.out.printf("Percentual de sapos: %.2f %%%n", pS);
+
+
+            
+            
+            sc.close();
+        }
+    }
